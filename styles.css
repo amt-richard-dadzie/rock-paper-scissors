@@ -94,3 +94,17 @@ img {
     margin-left: 60px;
     border-color: chartreuse;
 }
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer button {
+    background: none;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 7px 25px;
+    color: #fff;
+    text-transform: uppercase;
+}
