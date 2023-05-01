@@ -100,9 +100,10 @@ const checkWinner = (userHand, computerHand) => {
 }
 
 const setWinner = winner => {
-    console.log(winner);
+    document.getElementById("winner").innerHTML = winner;
 }
 
 const updateScore = score => {
-    console.log(score)
+    SCORE = score;
+    console.log(score);
 }
