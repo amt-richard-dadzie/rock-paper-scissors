@@ -61,3 +61,36 @@ img {
     margin-right: 0.5rem;
     padding-block: 10px;
 }
+
+.game-venue {
+    background-image: url(images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 90%;
+    height: 380px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 70px
+}
+
+.round-edge {
+    border: 15px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.round-edge.paper {
+    border-color: #2700ff;
+}
+.round-edge.scissors {
+    margin-left: 60px;
+    border-color: chartreuse;
+}
