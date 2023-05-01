@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    color:hsl(229, 25%, 31%);
+}
+
+p{
+    font-size: 0.8rem;
+    color: hsl(229, 64%, 46%);
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        hsl(214, 47%, 23%),
+        hsl(237, 49%, 15%)
+    );
+    padding-top: 2rem;
+}
+
+.scoreboard {
+    width: min(90%, 40rem);
+    margin-inline: auto;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 30%;
+    margin-left: 0.9rem;
+}
+.scorecard{
+    width: min(30%, 8.125rem);
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    padding-block: 10px;
+}
