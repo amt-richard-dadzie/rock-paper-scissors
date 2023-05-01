@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Papper-Scissors</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="JavaScript/index.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -20,15 +21,43 @@
         </header>
         <main class="game-venue">
             <div class="round-edge paper">
-                <img src="images/icon-paper.svg" alt="paper-icon">
+                <div class="inner-circle">
+                    <img src="images/icon-paper.svg" onclick="pickUserHand('paper')" alt="paper-icon">
+                </div>
             </div>
             <div class="round-edge scissors">
-                <img src="images/icon-scissors.svg" alt="scissor-icon">
+                <div class="inner-circle">
+                    <img src="images/icon-scissors.svg" onclick="pickUserHand('scissors')" alt="scissor-icon">
+                </div>
             </div>
             <div class="round-edge rock">
-                <img src="images/icon-rock.svg" alt="rock-icon">
+                <div class="inner-circle">
+                    <img src="images/icon-rock.svg" onclick="pickUserHand('rock')" alt="rock-icon">
+                </div>
             </div>
         </main>
+        <div class="competition">
+            <div class="userHand">
+                <h1>You Picked</h1>
+                <div id="background" class="round-edge paper shift-down">
+                    <div class="inner-circle">
+                        <img id="userPick" src="images/icon-paper.svg"  alt="paper-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <p>You <span id="win">Won</span></p>
+                <button>Play Again</button>
+            </div>
+            <div class="computerHand">
+                <h1>The House Picked</h1>
+                <div class="round-edge paper shift-down" id="cBackground">
+                    <div class="inner-circle">
+                        <img id="computerPick" src="images/icon-paper.svg"  alt="paper-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer">
             <button>Rules</button>
         </div>
