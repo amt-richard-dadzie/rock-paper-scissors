@@ -105,5 +105,5 @@ const setWinner = winner => {
 
 const updateScore = score => {
     SCORE = score;
-    console.log(score);
+    document.getElementById("score").innerHTML = score;
 }
