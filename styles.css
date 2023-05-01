@@ -85,6 +85,11 @@ img {
     padding: 20px;
     background-color: #fff;
     cursor: pointer;
+    transition: all 0.25s;
+}
+
+.round-edge:hover {
+    transform: translate3d(0px, -8px, 0px);
 }
 
 .round-edge.paper {
