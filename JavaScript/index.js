@@ -98,6 +98,15 @@ const checkWinner = (userHand, computerHand) => {
         updateScore(SCORE + 1);
     }
 }
+const playAgain = () => {
+    let venue = document.querySelector(".game-venue");
+    venue.style.display = "flex";
+
+    //show the page with the hand picked
+    let contest = document.querySelector(".competition");
+    contest.style.display = "none";
+
+}
 
 const setWinner = winner => {
     document.getElementById("winner").innerHTML = winner;
