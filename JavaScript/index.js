@@ -116,3 +116,19 @@ const updateScore = score => {
     SCORE = score;
     document.getElementById("score").innerHTML = score;
 }
+
+const showGameRules = () => {
+    let modelBackground = document.querySelector(".model-bg");
+    modelBackground.style.display = "block";
+
+    let modelRules = document.querySelector(".model");
+    modelRules.style.display = "block";
+}
+
+const closeRules = () => {
+    let modelBackground = document.querySelector(".model-bg");
+    modelBackground.style.display = "none";
+
+    let modelRules = document.querySelector(".model");
+    modelRules.style.display = "none";
+}
