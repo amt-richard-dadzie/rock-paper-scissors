@@ -24,26 +24,27 @@
             </div>
         </header>
         <main class="game-venue">
-            <div class="round-edge paper">
+            <div class="round-edge paper" onclick="pickUserHand('paper')">
                 <div class="inner-circle">
-                    <img src="images/icon-paper.svg" onclick="pickUserHand('paper')" alt="paper-icon">
+                    <img src="images/icon-paper.svg"  alt="paper-icon">
                 </div>
             </div>
-            <div class="round-edge scissors">
+            <div class="round-edge scissors" onclick="pickUserHand('scissors')">
                 <div class="inner-circle">
-                    <img src="images/icon-scissors.svg" onclick="pickUserHand('scissors')" alt="scissor-icon">
+                    <img src="images/icon-scissors.svg"  alt="scissor-icon">
                 </div>
             </div>
-            <div class="round-edge rock">
+            <div class="round-edge rock" onclick="pickUserHand('rock')">
                 <div class="inner-circle">
-                    <img src="images/icon-rock.svg" onclick="pickUserHand('rock')" alt="rock-icon">
+                    <img src="images/icon-rock.svg"  alt="rock-icon">
                 </div>
             </div>
         </main>
+        <!-- <div class="result"></div> -->
         <div class="competition">
             <div class="userHand">
                 <h1>You Picked</h1>
-                <div id="background" class="round-edge paper shift-down">
+                <div id="background" class="results outer shift-down">
                     <div class="inner-circle">
                         <img id="userPick" src="images/icon-paper.svg"  alt="paper-icon">
                     </div>
@@ -55,7 +56,7 @@
             </div>
             <div class="computerHand">
                 <h1>The House Picked</h1>
-                <div class="round-edge paper shift-down" id="cBackground">
+                <div id="cBackground" class="results outer shift-down" >
                     <div class="inner-circle">
                         <img id="computerPick" src="images/icon-paper.svg"  alt="paper-icon">
                     </div>

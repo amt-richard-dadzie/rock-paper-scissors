@@ -1,4 +1,3 @@
-
 const userOptions ={
     rock: 'images/icon-rock.svg',
     paper: 'images/icon-paper.svg',
@@ -6,6 +5,7 @@ const userOptions ={
 }
 
 let SCORE = 0;
+
 
 const pickUserHand = hand => {
     console.log(hand);
@@ -72,39 +72,57 @@ const pickComputerHand = () => {
     return computerPick;
 }
 
+
 const checkWinner = (userHand, computerHand) => {
+    const div = document.querySelectorAll(".results");
     if (userHand === computerHand){
-        setWinner("It's a tie");
+        setWinner("IT'S A TIE");
     }
     if (userHand === 'paper' && computerHand === 'rock'){
-        setWinner('YOU WIN!');
-        updateScore(SCORE + 1);
+        setWinner('YOU WIN');
+        updateScore(1);
+        div[0].classList.toggle('shadow');
+
     }
     if (userHand === 'paper' && computerHand === 'scissors'){
-        setWinner('YOU LOSE!');
+        setWinner('YOU LOSE');
+        updateScore(-1);
+        div[1].classList.toggle('shadow');
     }
     if (userHand === 'rock' && computerHand === 'paper'){
-        setWinner('YOU LOSE!');
+        setWinner('YOU LOSE');
+        updateScore(-1);
+        div[1].classList.toggle('shadow');
     }
     if (userHand === 'rock' && computerHand === 'scissors'){
-        setWinner('YOU WIN!');
-        updateScore(SCORE + 1);
+        setWinner('YOU WIN');
+        updateScore(1);
+        div[0].classList.toggle('shadow');
     }
     if (userHand === 'scissors' && computerHand === 'rock'){
-        setWinner('YOU LOSE!');
+        setWinner('YOU LOSE');
+        updateScore(-1);
+        div[1].classList.toggle('shadow');
     }
     if (userHand === 'scissors' && computerHand === 'paper'){
-        setWinner('YOU WIN!');
-        updateScore(SCORE + 1);
+        setWinner('YOU WIN');
+        updateScore(1);
+        div[0].classList.toggle('shadow');
     }
 }
 const playAgain = () => {
+    const divs = document.querySelectorAll(".results");
     let venue = document.querySelector(".game-venue");
     venue.style.display = "flex";
 
     //show the page with the hand picked
     let contest = document.querySelector(".competition");
     contest.style.display = "none";
+
+    divs.forEach((div) => {
+        div.classList.remove("shadow");
+
+    });
 
 }
 
@@ -113,8 +131,8 @@ const setWinner = winner => {
 }
 
 const updateScore = score => {
-    SCORE = score;
-    document.getElementById("score").innerHTML = score;
+    SCORE += score;
+    document.getElementById("score").innerHTML = SCORE;
 }
 
 const showGameRules = () => {

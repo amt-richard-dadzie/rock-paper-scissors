@@ -20,7 +20,7 @@ h1 {
 }
 
 p{
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     color: hsl(229, 64%, 46%);
 }
@@ -80,7 +80,7 @@ img {
     margin-top: 70px
 }
 
-.round-edge {
+.round-edge, .outer{
     /* border: 15px solid red; */
     border-radius: 50%;
     display: flex;
@@ -106,6 +106,7 @@ img {
 
 .round-edge:hover {
     transform: translate3d(0px, -8px, 0px);
+    box-shadow: 0 0 0 2rem #2d4061;
 }
 
 .round-edge.paper {
@@ -153,6 +154,18 @@ img {
     flex-direction: column-reverse;
     align-items: center;
 }
+.shadow {
+    box-shadow: 0 0 0 10px #374168, 0 0 0 20px #34406a, 0 0 0 30px #28345b;
+    animation: shadow 1s ease forwards;
+}
+@keyframes shadow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
 .result {
     margin-top: 50px;
     order: 1;
@@ -167,6 +180,10 @@ img {
     border-radius: 8px;
     padding: 11px 50px;
     text-transform: uppercase;
+    cursor: pointer;
+}
+.result button:hover {
+    color: #d40f39;
 }
 .shift-down {
     margin-bottom: 30px;
@@ -189,8 +206,33 @@ img {
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all ease-in 0.5s;
 }
-
+.footer button:hover {
+    background: #fff;
+    color:#1e2949;
+}
+.model {
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 40px 30px 30px;
+}
+.model .close {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+.model .content {
+    position: relative;
+    top: 20%;
+}
 /*Desktop View*/
 
 @media only screen and (min-width: 770px) {
@@ -203,10 +245,23 @@ img {
         height: 400px;
     }
 
-    .round-edge {
+    .round-edge, .outer {
         width: 180px;
         height: 180px;
     }
+    .shadow {
+        box-shadow: 0 0 0 40px #293251, 0 0 0 80px #232c4b, 0 0 0 100px #1e2949;
+        animation: shadow 1s ease forwards;
+    }
+    @keyframes shadow {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
     .inner-circle{
         width: 135px;
         height: 135px;
@@ -217,11 +272,12 @@ img {
     }
 
     .competition h1 {
+        z-index: 2;
         font-size: 25px;
         color: #fff;
         text-transform: uppercase;
     }
-    .competition .round-edge {
+    .competition .outer {
         transform: scale(1.5);
     }
     .computerHand, .userHand  {
@@ -229,6 +285,7 @@ img {
     }
     .result {
         order: 0;
+        z-index: 2;
     }
     .result p {
         font-size: 35px;
@@ -258,27 +315,19 @@ img {
         background: rgba(0, 0, 0, 50%);
     }
     .model {
-        display: none;
-        position: absolute;
-        background: #fff;
-        width: 100%;
-        max-width: 500px;
+        height: auto;
         top: 25%;
         left: 35%;
         z-index: 3;
-        padding: 40px 30px 30px;
     }
-    .model .close {
-        position: absolute;
-        right: 30px;
-        cursor: pointer;
-    }
+
     .model h1 {
         font-size: 30px;
         font-weight: 700;
     }
     .model .content {
         display: flex;
+        top: 0;
         justify-content: center;
     }
 
